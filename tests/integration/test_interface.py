@@ -6,7 +6,7 @@ import pytest
 from cppython.plugins.test.data import default_pyproject
 from cppython.plugins.test.pytest import InterfaceIntegrationTests
 
-from cppython_pdm import PDMInterface
+from cppython_pdm.plugin import PDMInterface
 
 
 class TestCPPythonInterface(InterfaceIntegrationTests):
