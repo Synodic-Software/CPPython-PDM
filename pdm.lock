@@ -40,11 +40,6 @@ version = "1.4"
 summary = "Fast, simple object-to-object and broadcast signaling"
 
 [[package]]
-name = "cached-property"
-version = "1.5.2"
-summary = "A decorator for caching properties in classes."
-
-[[package]]
 name = "click"
 version = "8.0.4"
 requires_python = ">=3.6"
@@ -77,7 +72,7 @@ extras = ["toml"]
 requires_python = ">=3.7"
 summary = "Code coverage measurement for Python"
 dependencies = [
-    "coverage>=5.2.1",
+    "coverage",
     "tomli",
 ]
 
@@ -92,6 +87,15 @@ dependencies = [
     "pydantic>=1.9",
     "pytest>=7.0.0",
     "tomlkit>=0.9",
+]
+
+[[package]]
+name = "findpython"
+version = "0.1.3"
+requires_python = ">=3.7"
+summary = "A utility to find python versions on your system"
+dependencies = [
+    "packaging>=20",
 ]
 
 [[package]]
@@ -143,12 +147,13 @@ summary = "Utility library for gitignore style pattern matching of file paths."
 
 [[package]]
 name = "pdm"
-version = "1.13.2"
+version = "1.13.3"
 requires_python = ">=3.7"
 summary = "Python Development Master"
 dependencies = [
     "blinker",
     "click>=7",
+    "findpython==0.1.3",
     "installer~=0.3.0",
     "packaging",
     "pdm-pep517<0.12,>=0.9",
@@ -156,7 +161,6 @@ dependencies = [
     "pip>=20.1",
     "platformdirs",
     "python-dotenv>=0.15",
-    "pythonfinder",
     "resolvelib<0.9,>=0.8",
     "shellingham>=1.3.2",
     "tomli>=1.1.0",
@@ -273,19 +277,6 @@ requires_python = ">=3.5"
 summary = "Read key-value pairs from a .env file and set them as environment variables"
 
 [[package]]
-name = "pythonfinder"
-version = "1.2.10"
-requires_python = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,>=2.7"
-summary = "A cross-platform python discovery tool to help locate python on any system."
-dependencies = [
-    "attrs",
-    "cached-property",
-    "click",
-    "packaging",
-    "six",
-]
-
-[[package]]
 name = "resolvelib"
 version = "0.8.1"
 summary = "Resolve abstract dependencies into concrete ones"
@@ -301,12 +292,6 @@ name = "shellingham"
 version = "1.4.0"
 requires_python = "!=3.0,!=3.1,!=3.2,!=3.3,>=2.6"
 summary = "Tool to Detect Surrounding Shell"
-
-[[package]]
-name = "six"
-version = "1.16.0"
-requires_python = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
-summary = "Python 2 and 3 compatibility utilities"
 
 [[package]]
 name = "toml"
@@ -389,10 +374,6 @@ content_hash = "sha256:b81b5acd757fe15833f8c70e760f3403420d748e45fbb049890541ed8
 "blinker 1.4" = [
     {file = "blinker-1.4.tar.gz", hash = "sha256:471aee25f3992bd325afa3772f1063dbdbbca947a041b8b89466dc00d606f8b6"},
 ]
-"cached-property 1.5.2" = [
-    {file = "cached_property-1.5.2-py2.py3-none-any.whl", hash = "sha256:df4f613cf7ad9a588cc381aaf4a512d26265ecebd5eb9e1ba12f1319eb85a6a0"},
-    {file = "cached-property-1.5.2.tar.gz", hash = "sha256:9fa5755838eecbb2d234c3aa390bd80fbd3ac6b6869109bfc1b499f7bd89a130"},
-]
 "click 8.0.4" = [
     {file = "click-8.0.4-py3-none-any.whl", hash = "sha256:6a7a62563bbfabfda3a38f3023a1db4a35978c0abd76f6c9605ecd6554d6d9b1"},
     {file = "click-8.0.4.tar.gz", hash = "sha256:8458d7b1287c5fb128c90e23381cf99dcde74beaf6c7ff6384ce84d6fe090adb"},
@@ -466,6 +447,10 @@ content_hash = "sha256:b81b5acd757fe15833f8c70e760f3403420d748e45fbb049890541ed8
     {file = "cppython-0.2.4-py3-none-any.whl", hash = "sha256:b528c9dc17d00df4e14f0cc03b094e10c12c34392536457f24b83d5c4a06eb0d"},
     {file = "cppython-0.2.4.tar.gz", hash = "sha256:47b412aa8b0f29b5c49daa49b58e019aee08f3e763fd92d2bfcbb1df03619850"},
 ]
+"findpython 0.1.3" = [
+    {file = "findpython-0.1.3-py3-none-any.whl", hash = "sha256:ec64268d4120173bf713761ae15335c811102debfd1c96d2ef782b85c2380a26"},
+    {file = "findpython-0.1.3.tar.gz", hash = "sha256:b55a416b9fcf2d28721bfbea1ceb2a6cb67a00f99ec4b94a76da22c7a2002870"},
+]
 "iniconfig 1.1.1" = [
     {file = "iniconfig-1.1.1-py2.py3-none-any.whl", hash = "sha256:011e24c64b7f47f6ebd835bb12a743f2fbe9a26d4cecaa7f53bc4f35ee9da8b3"},
     {file = "iniconfig-1.1.1.tar.gz", hash = "sha256:bc3af051d7d14b2ee5ef9969666def0cd1a000e121eaea580d4a313df4b37f32"},
@@ -533,9 +518,9 @@ content_hash = "sha256:b81b5acd757fe15833f8c70e760f3403420d748e45fbb049890541ed8
     {file = "pathspec-0.9.0-py2.py3-none-any.whl", hash = "sha256:7d15c4ddb0b5c802d161efc417ec1a2558ea2653c2e8ad9c19098201dc1c993a"},
     {file = "pathspec-0.9.0.tar.gz", hash = "sha256:e564499435a2673d586f6b2130bb5b95f04a3ba06f81b8f895b651a3c76aabb1"},
 ]
-"pdm 1.13.2" = [
-    {file = "pdm-1.13.2-py3-none-any.whl", hash = "sha256:a1cc06aa33e0a9b0b1d7b87ab61777a18c48208452dc1aec849ae9cb42bb7c18"},
-    {file = "pdm-1.13.2.tar.gz", hash = "sha256:4d6c33a5f1053c91bcc7a6b494108602d3727bb5120889a897fcd1fb7b779033"},
+"pdm 1.13.3" = [
+    {file = "pdm-1.13.3-py3-none-any.whl", hash = "sha256:0656293298346fd809f5418475bd068c60e3ae633067f2cb25f57c8bba163e36"},
+    {file = "pdm-1.13.3.tar.gz", hash = "sha256:e7e6e38e58e693700768356363336e0bb96492f9692daf7f82b2a07661110bb9"},
 ]
 "pdm-pep517 0.11.2" = [
     {file = "pdm_pep517-0.11.2-py3-none-any.whl", hash = "sha256:5d08bb9425f51330b63008401afa7cbc19e1509ed2df292a3f2f43bf0692a1dc"},
@@ -622,10 +607,6 @@ content_hash = "sha256:b81b5acd757fe15833f8c70e760f3403420d748e45fbb049890541ed8
     {file = "python_dotenv-0.19.2-py2.py3-none-any.whl", hash = "sha256:32b2bdc1873fd3a3c346da1c6db83d0053c3c62f28f1f38516070c4c8971b1d3"},
     {file = "python-dotenv-0.19.2.tar.gz", hash = "sha256:a5de49a31e953b45ff2d2fd434bbc2670e8db5273606c1e737cc6b93eff3655f"},
 ]
-"pythonfinder 1.2.10" = [
-    {file = "pythonfinder-1.2.10-py2.py3-none-any.whl", hash = "sha256:27818b4c6023c2b79dbe0e67b3da348ef30affa70dc4c256d5d5cb67e5e70573"},
-    {file = "pythonfinder-1.2.10.tar.gz", hash = "sha256:ce2a1c2b313d605788173caf68d074f80c00b067364bc57047e68735bc9037d0"},
-]
 "resolvelib 0.8.1" = [
     {file = "resolvelib-0.8.1-py2.py3-none-any.whl", hash = "sha256:d9b7907f055c3b3a2cfc56c914ffd940122915826ff5fb5b1de0c99778f4de98"},
     {file = "resolvelib-0.8.1.tar.gz", hash = "sha256:c6ea56732e9fb6fca1b2acc2ccc68a0b6b8c566d8f3e78e0443310ede61dbd37"},
@@ -637,10 +618,6 @@ content_hash = "sha256:b81b5acd757fe15833f8c70e760f3403420d748e45fbb049890541ed8
 "shellingham 1.4.0" = [
     {file = "shellingham-1.4.0-py2.py3-none-any.whl", hash = "sha256:536b67a0697f2e4af32ab176c00a50ac2899c5a05e0d8e2dadac8e58888283f9"},
     {file = "shellingham-1.4.0.tar.gz", hash = "sha256:4855c2458d6904829bd34c299f11fdeed7cfefbf8a2c522e4caea6cd76b3171e"},
-]
-"six 1.16.0" = [
-    {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
-    {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
 ]
 "toml 0.10.2" = [
     {file = "toml-0.10.2-py2.py3-none-any.whl", hash = "sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b"},
