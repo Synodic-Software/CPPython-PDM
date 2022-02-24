@@ -1,4 +1,10 @@
-from cppython.schema import Interface
+"""
+TODO
+"""
+
+from typing import Type
+
+from cppython.schema import GeneratorDataType, Interface
 from pdm.cli.commands.base import BaseCommand
 from pdm.project.config import ConfigItem
 
@@ -20,9 +26,20 @@ class HelloCommand(BaseCommand):
 
 
 def cppython_plugin(core):
+    """
+    TODO
+    """
     core.register_command(HelloCommand, "hello")
     core.add_config("hello.name", ConfigItem("The person's name", "John"))
 
 
 class PDMInterface(Interface):
-    pass
+    """
+    TODO
+    """
+
+    def read_generator_data(self, generator_data_type: Type[GeneratorDataType]) -> GeneratorDataType:
+        return generator_data_type()
+
+    def write_pyproject(self) -> None:
+        pass
