@@ -4,33 +4,11 @@ TODO
 
 from typing import Type
 
-from cppython.schema import GeneratorDataType, Interface
-from pdm.cli.commands.base import BaseCommand
-from pdm.project.config import ConfigItem
-
-
-class HelloCommand(BaseCommand):
-    """Say hello to the specified person.
-    If none is given, will read from "hello.name" config.
-    """
-
-    def add_arguments(self, parser):
-        parser.add_argument("-n", "--name", help="the person's name to whom you greet")
-
-    def handle(self, project, options):
-        if not options.name:
-            name = project.config["hello.name"]
-        else:
-            name = options.name
-        print(f"Hello, {name}")
-
-
-def cppython_plugin(core):
-    """
-    TODO
-    """
-    core.register_command(HelloCommand, "hello")
-    core.add_config("hello.name", ConfigItem("The person's name", "John"))
+from cppython.project import Project as CPPythonProject
+from cppython.schema import GeneratorDataType, Interface, PyProject
+from pdm import Core, Project
+from pdm.models.candidates import Candidate
+from pdm.signals import post_install
 
 
 class PDMInterface(Interface):
@@ -43,3 +21,19 @@ class PDMInterface(Interface):
 
     def write_pyproject(self) -> None:
         pass
+
+
+def on_post_install(project: Project, candidates: dict[str, Candidate], dry_run: bool):
+    """
+    TODO
+    """
+    pyproject = PyProject(**project.config)
+    interface = PDMInterface(pyproject)
+    cppython_project = CPPythonProject(interface)
+
+
+def cppython_plugin(core: Core):
+    """
+    TODO
+    """
+    post_install.connect(on_post_install)
