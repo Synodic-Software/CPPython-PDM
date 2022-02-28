@@ -19,7 +19,7 @@ requires-python = ">=3.10"
 
 dependencies = [
   "cppython>=0.2.4",
-  "pdm>=1.12.8",
+  "pdm>=1.13.3",
 ]
 
 [tool.pdm.dev-dependencies]
