@@ -27,6 +27,11 @@ def on_post_install(project: Project, candidates: dict[str, Candidate], dry_run:
     """
     TODO
     """
+
+    # Don't operate on the plugin project
+    if project.meta.name == "cppython-pdm":
+        return
+
     pyproject = PyProject(**project.config)
     interface = PDMInterface(pyproject)
     cppython_project = CPPythonProject(interface)
