@@ -72,7 +72,7 @@ extras = ["toml"]
 requires_python = ">=3.7"
 summary = "Code coverage measurement for Python"
 dependencies = [
-    "coverage>=5.2.1",
+    "coverage",
     "tomli",
 ]
 
@@ -331,7 +331,7 @@ summary = "Module for decorators, wrappers and monkey patching."
 
 [metadata]
 lock_version = "3.1"
-content_hash = "sha256:b81b5acd757fe15833f8c70e760f3403420d748e45fbb049890541ed808c73e4"
+content_hash = "sha256:9dabb5112c66874c3e4079b63b9e4c25495d0645ea0d4660a30a6cf9f6ed5052"
 
 [metadata.files]
 "astroid 2.9.3" = [
