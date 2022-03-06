@@ -11,10 +11,14 @@ from pdm.models.candidates import Candidate
 from pdm.signals import post_install
 
 
-class PDMInterface(Interface):
+class CPPythonPlugin(Interface):
     """
     TODO
     """
+
+    def __init__(self, core: Core) -> None:
+
+        post_install.connect(self.on_post_install)
 
     def read_generator_data(self, generator_data_type: Type[GeneratorDataType]) -> GeneratorDataType:
         return generator_data_type()
@@ -22,23 +26,16 @@ class PDMInterface(Interface):
     def write_pyproject(self) -> None:
         pass
 
+    def on_post_install(self, project: Project, candidates: dict[str, Candidate], dry_run: bool):
+        """
+        TODO
+        """
 
-def on_post_install(project: Project, candidates: dict[str, Candidate], dry_run: bool):
-    """
-    TODO
-    """
+        # Don't operate on the plugin project
+        if project.meta.name == "cppython-pdm":
+            return
 
-    # Don't operate on the plugin project
-    if project.meta.name == "cppython-pdm":
-        return
+        pyproject = PyProject(**project.config)
+        cppython_project = CPPythonProject(self, pyproject)
 
-    pyproject = PyProject(**project.config)
-    interface = PDMInterface(pyproject)
-    cppython_project = CPPythonProject(interface)
-
-
-def cppython_plugin(core: Core):
-    """
-    TODO
-    """
-    post_install.connect(on_post_install)
+        cppython_project.install()
