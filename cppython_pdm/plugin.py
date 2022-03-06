@@ -25,6 +25,10 @@ class CPPythonPlugin(Interface):
         return generator_data_type()
 
     def write_pyproject(self) -> None:
+        """
+        TODO:
+        """
+
         pass
 
     def on_post_install(self, project: Project, candidates: dict[str, Candidate], dry_run: bool):
