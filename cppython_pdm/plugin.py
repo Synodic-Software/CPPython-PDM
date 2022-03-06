@@ -18,6 +18,7 @@ class CPPythonPlugin(Interface):
 
     def __init__(self, core: Core) -> None:
 
+        self.core = core
         post_install.connect(self.on_post_install)
 
     def read_generator_data(self, generator_data_type: Type[GeneratorDataType]) -> GeneratorDataType:
