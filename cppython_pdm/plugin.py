@@ -36,3 +36,6 @@ class CPPythonPlugin(Interface):
         cppython_project = CPPythonProject(self, pyproject)
 
         cppython_project.install()
+
+    def print(self, string: str) -> None:
+        print(string)
