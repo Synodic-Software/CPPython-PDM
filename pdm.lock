@@ -78,7 +78,7 @@ dependencies = [
 
 [[package]]
 name = "cppython"
-version = "0.2.4"
+version = "0.3.0"
 requires_python = ">=3.10"
 summary = "A Python package manager agnostic plugin integrating a transparent Conan and CMake workflow."
 dependencies = [
@@ -331,7 +331,7 @@ summary = "Module for decorators, wrappers and monkey patching."
 
 [metadata]
 lock_version = "3.1"
-content_hash = "sha256:9dabb5112c66874c3e4079b63b9e4c25495d0645ea0d4660a30a6cf9f6ed5052"
+content_hash = "sha256:2db8b3be29ec726f77c11a5a909d5888e467f910973b8da6969ca4ac058995fe"
 
 [metadata.files]
 "astroid 2.9.3" = [
@@ -443,9 +443,9 @@ content_hash = "sha256:9dabb5112c66874c3e4079b63b9e4c25495d0645ea0d4660a30a6cf9f
     {file = "coverage-6.3.2-pp36.pp37.pp38-none-any.whl", hash = "sha256:18d520c6860515a771708937d2f78f63cc47ab3b80cb78e86573b0a760161faf"},
     {file = "coverage-6.3.2.tar.gz", hash = "sha256:03e2a7826086b91ef345ff18742ee9fc47a6839ccd517061ef8fa1976e652ce9"},
 ]
-"cppython 0.2.4" = [
-    {file = "cppython-0.2.4-py3-none-any.whl", hash = "sha256:b528c9dc17d00df4e14f0cc03b094e10c12c34392536457f24b83d5c4a06eb0d"},
-    {file = "cppython-0.2.4.tar.gz", hash = "sha256:47b412aa8b0f29b5c49daa49b58e019aee08f3e763fd92d2bfcbb1df03619850"},
+"cppython 0.3.0" = [
+    {file = "cppython-0.3.0-py3-none-any.whl", hash = "sha256:86bd4dd11929b30624b1045dd0f8dde43e64337d536a339f44802d7ee222d03d"},
+    {file = "cppython-0.3.0.tar.gz", hash = "sha256:6e96f4d22533b0bdba9d78acc018139b30c150f0a6aafc80f9aa5d827c5b95d9"},
 ]
 "findpython 0.1.3" = [
     {file = "findpython-0.1.3-py3-none-any.whl", hash = "sha256:ec64268d4120173bf713761ae15335c811102debfd1c96d2ef782b85c2380a26"},
