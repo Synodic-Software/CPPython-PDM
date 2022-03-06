@@ -1,5 +1,5 @@
 [project]
-description = ""
+description = "Interface plugin for CPPython that hooks into PDM"
 name = "cppython-pdm"
 
 license = "MIT"

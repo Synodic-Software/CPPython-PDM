@@ -31,10 +31,6 @@ class CPPythonPlugin(Interface):
         TODO
         """
 
-        # Don't operate on the plugin project
-        if project.meta.name == "cppython-pdm":
-            return
-
         pyproject = PyProject(**project.config)
         cppython_project = CPPythonProject(self, pyproject)
 
