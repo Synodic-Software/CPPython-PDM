@@ -184,7 +184,7 @@ dependencies = [
 
 [[package]]
 name = "pip"
-version = "22.0.4"
+version = "22.0.3"
 requires_python = ">=3.7"
 summary = "The PyPA recommended tool for installing Python packages."
 
@@ -530,9 +530,9 @@ content_hash = "sha256:1e54500747d1814e25be50d16ff3ae52d981f1017c79d3ae9a0ae61f5
     {file = "pep517-0.12.0-py2.py3-none-any.whl", hash = "sha256:dd884c326898e2c6e11f9e0b64940606a93eb10ea022a2e067959f3a110cf161"},
     {file = "pep517-0.12.0.tar.gz", hash = "sha256:931378d93d11b298cf511dd634cf5ea4cb249a28ef84160b3247ee9afb4e8ab0"},
 ]
-"pip 22.0.4" = [
-    {file = "pip-22.0.4-py3-none-any.whl", hash = "sha256:c6aca0f2f081363f689f041d90dab2a07a9a07fb840284db2218117a52da800b"},
-    {file = "pip-22.0.4.tar.gz", hash = "sha256:b3a9de2c6ef801e9247d1527a4b16f92f2cc141cd1489f3fffaf6a9e96729764"},
+"pip 22.0.3" = [
+    {file = "pip-22.0.3-py3-none-any.whl", hash = "sha256:c146f331f0805c77017c6bb9740cec4a49a0d4582d0c3cc8244b057f83eca359"},
+    {file = "pip-22.0.3.tar.gz", hash = "sha256:f29d589df8c8ab99c060e68ad294c4a9ed896624f6368c5349d70aa581b333d0"},
 ]
 "platformdirs 2.5.1" = [
     {file = "platformdirs-2.5.1-py3-none-any.whl", hash = "sha256:bcae7cab893c2d310a711b70b24efb93334febe65f8de776ee320b517471e227"},
