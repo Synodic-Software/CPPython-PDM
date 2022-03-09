@@ -78,7 +78,7 @@ dependencies = [
 
 [[package]]
 name = "cppython"
-version = "0.3.2"
+version = "0.3.3"
 requires_python = ">=3.10"
 summary = "A Python package manager agnostic plugin integrating a transparent Conan and CMake workflow."
 dependencies = [
@@ -147,7 +147,7 @@ summary = "Utility library for gitignore style pattern matching of file paths."
 
 [[package]]
 name = "pdm"
-version = "1.13.3"
+version = "1.13.4"
 requires_python = ">=3.7"
 summary = "Python Development Master"
 dependencies = [
@@ -156,7 +156,7 @@ dependencies = [
     "findpython",
     "installer~=0.3.0",
     "packaging",
-    "pdm-pep517<0.12,>=0.9",
+    "pdm-pep517<1,>=0.9",
     "pep517>=0.11.0",
     "pip>=20.1",
     "platformdirs",
@@ -170,7 +170,7 @@ dependencies = [
 
 [[package]]
 name = "pdm-pep517"
-version = "0.11.2"
+version = "0.12.0"
 requires_python = ">=3.7"
 summary = "A PEP 517 backend for PDM that supports PEP 621 metadata"
 
@@ -184,7 +184,7 @@ dependencies = [
 
 [[package]]
 name = "pip"
-version = "22.0.3"
+version = "22.0.4"
 requires_python = ">=3.7"
 summary = "The PyPA recommended tool for installing Python packages."
 
@@ -331,7 +331,7 @@ summary = "Module for decorators, wrappers and monkey patching."
 
 [metadata]
 lock_version = "3.1"
-content_hash = "sha256:1e54500747d1814e25be50d16ff3ae52d981f1017c79d3ae9a0ae61f55cd1972"
+content_hash = "sha256:b3b8fcae9ae9df2f5d0628334249387fe04ce4e7b34d81e5c1661f81ab8e5e0b"
 
 [metadata.files]
 "astroid 2.9.3" = [
@@ -443,9 +443,9 @@ content_hash = "sha256:1e54500747d1814e25be50d16ff3ae52d981f1017c79d3ae9a0ae61f5
     {file = "coverage-6.3.2-pp36.pp37.pp38-none-any.whl", hash = "sha256:18d520c6860515a771708937d2f78f63cc47ab3b80cb78e86573b0a760161faf"},
     {file = "coverage-6.3.2.tar.gz", hash = "sha256:03e2a7826086b91ef345ff18742ee9fc47a6839ccd517061ef8fa1976e652ce9"},
 ]
-"cppython 0.3.2" = [
-    {file = "cppython-0.3.2-py3-none-any.whl", hash = "sha256:198803f259ae1e35899b5306a9f71e509b4ceae3f996f1b23dca1db30e34a749"},
-    {file = "cppython-0.3.2.tar.gz", hash = "sha256:c0d1797b2d03be5fb666ed7c86587f838bc5b76eb160428789036eb39500d34d"},
+"cppython 0.3.3" = [
+    {file = "cppython-0.3.3-py3-none-any.whl", hash = "sha256:7b2ad19699bdf1c0c92f57ca8c66b3cf119d2a3301b696ed4169a053eee80c42"},
+    {file = "cppython-0.3.3.tar.gz", hash = "sha256:cac547c37c9ae04e17ea51c8ea8d5f02dad9a95ab38839355152d5d251874240"},
 ]
 "findpython 0.1.3" = [
     {file = "findpython-0.1.3-py3-none-any.whl", hash = "sha256:ec64268d4120173bf713761ae15335c811102debfd1c96d2ef782b85c2380a26"},
@@ -518,21 +518,21 @@ content_hash = "sha256:1e54500747d1814e25be50d16ff3ae52d981f1017c79d3ae9a0ae61f5
     {file = "pathspec-0.9.0-py2.py3-none-any.whl", hash = "sha256:7d15c4ddb0b5c802d161efc417ec1a2558ea2653c2e8ad9c19098201dc1c993a"},
     {file = "pathspec-0.9.0.tar.gz", hash = "sha256:e564499435a2673d586f6b2130bb5b95f04a3ba06f81b8f895b651a3c76aabb1"},
 ]
-"pdm 1.13.3" = [
-    {file = "pdm-1.13.3-py3-none-any.whl", hash = "sha256:0656293298346fd809f5418475bd068c60e3ae633067f2cb25f57c8bba163e36"},
-    {file = "pdm-1.13.3.tar.gz", hash = "sha256:e7e6e38e58e693700768356363336e0bb96492f9692daf7f82b2a07661110bb9"},
+"pdm 1.13.4" = [
+    {file = "pdm-1.13.4-py3-none-any.whl", hash = "sha256:657ee4d44dfae8be2e90cb26f0abb6e8d4d320bd22de280b600ffabd4a3fc576"},
+    {file = "pdm-1.13.4.tar.gz", hash = "sha256:5644fec425d1c0af04f135ad05b15b5a87be5a42e07f64e1706e3aac5dc89fcb"},
 ]
-"pdm-pep517 0.11.2" = [
-    {file = "pdm_pep517-0.11.2-py3-none-any.whl", hash = "sha256:5d08bb9425f51330b63008401afa7cbc19e1509ed2df292a3f2f43bf0692a1dc"},
-    {file = "pdm-pep517-0.11.2.tar.gz", hash = "sha256:e000bab43502c191d71808a2630dd44ece301a319d26e002a1caea3a7307cd20"},
+"pdm-pep517 0.12.0" = [
+    {file = "pdm_pep517-0.12.0-py3-none-any.whl", hash = "sha256:4395009e4589d9f1893dbef9c041a6bcc972493c0895d8d3a1eef8ef25f8317d"},
+    {file = "pdm-pep517-0.12.0.tar.gz", hash = "sha256:fdc8b6564fbba5fd1d01e37d2cef21bca11e698f70ab0b95740b9f6f0854a789"},
 ]
 "pep517 0.12.0" = [
     {file = "pep517-0.12.0-py2.py3-none-any.whl", hash = "sha256:dd884c326898e2c6e11f9e0b64940606a93eb10ea022a2e067959f3a110cf161"},
     {file = "pep517-0.12.0.tar.gz", hash = "sha256:931378d93d11b298cf511dd634cf5ea4cb249a28ef84160b3247ee9afb4e8ab0"},
 ]
-"pip 22.0.3" = [
-    {file = "pip-22.0.3-py3-none-any.whl", hash = "sha256:c146f331f0805c77017c6bb9740cec4a49a0d4582d0c3cc8244b057f83eca359"},
-    {file = "pip-22.0.3.tar.gz", hash = "sha256:f29d589df8c8ab99c060e68ad294c4a9ed896624f6368c5349d70aa581b333d0"},
+"pip 22.0.4" = [
+    {file = "pip-22.0.4-py3-none-any.whl", hash = "sha256:c6aca0f2f081363f689f041d90dab2a07a9a07fb840284db2218117a52da800b"},
+    {file = "pip-22.0.4.tar.gz", hash = "sha256:b3a9de2c6ef801e9247d1527a4b16f92f2cc141cd1489f3fffaf6a9e96729764"},
 ]
 "platformdirs 2.5.1" = [
     {file = "platformdirs-2.5.1-py3-none-any.whl", hash = "sha256:bcae7cab893c2d310a711b70b24efb93334febe65f8de776ee320b517471e227"},

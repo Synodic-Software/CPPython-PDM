@@ -15,8 +15,8 @@ dynamic = ["version"]
 requires-python = ">=3.10"
 
 dependencies = [
-  "cppython>=0.3.2",
-  "pdm>=1.13.3",
+  "cppython>=0.3.3",
+  "pdm>=1.13.4",
 ]
 
 [project.license-files]
@@ -25,6 +25,9 @@ paths = ["LICENSE.md"]
 [project.urls]
 homepage = "https://github.com/Synodic-Software/CPPython-PDM"
 repository = "https://github.com/Synodic-Software/CPPython-PDM"
+
+[tool.pdm]
+version = {use_scm = true}
 
 [tool.pdm.dev-dependencies]
 lint = [
