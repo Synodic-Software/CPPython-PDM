@@ -2,8 +2,8 @@
 TODO
 """
 import pytest
-from cppython.plugins.test.pytest import InterfaceIntegrationTests
 from pdm import Core
+from pytest_cppython.plugin import InterfaceIntegrationTests
 
 from cppython_pdm.plugin import CPPythonPlugin
 
