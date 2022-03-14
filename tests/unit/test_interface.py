@@ -3,8 +3,8 @@ TODO
 """
 
 import pytest
-from cppython.plugins.test.pytest import InterfaceUnitTests
 from pdm import Core
+from pytest_cppython.plugin import InterfaceUnitTests
 from pytest_mock import MockerFixture
 
 from cppython_pdm.plugin import CPPythonPlugin
