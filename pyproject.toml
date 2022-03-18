@@ -15,7 +15,7 @@ dynamic = ["version"]
 requires-python = ">=3.10"
 
 dependencies = [
-  "cppython>=0.4.1",
+  "cppython>=0.4.4",
   "pdm>=1.13.4",
 ]
 
@@ -36,7 +36,7 @@ lint = [
   "isort>=5.10.1",
 ]
 test = [
-  "pytest >=7.1.0",
+  "pytest >=7.1.1",
   "pytest-cov>=3.0.0",
   "pytest-mock>=3.7.0",
   "pytest-cppython>=0.1.0",
@@ -60,7 +60,6 @@ profile = "black"
 
 [tool.pylint.messages_control]
 disable = "C0330, C0326"
-extension-pkg-whitelist = "pydantic"
 
 [tool.pylint.format]
 max-line-length = "120"
