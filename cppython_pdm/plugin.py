@@ -44,7 +44,7 @@ class CPPythonPlugin(Interface):
             return
 
         pyproject = PyProject(**pdm_pyproject)
-        configuration = ProjectConfiguration()
+        configuration = ProjectConfiguration(verbose=bool(project.core.ui.verbosity))
         cppython_project = CPPythonProject(configuration, self, pyproject)
 
         cppython_project.install()
