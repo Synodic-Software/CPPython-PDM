@@ -2,11 +2,9 @@
 TODO
 """
 import pytest
-from cppython.project import Project as CPPythonProject
 from pdm import Core
 from pdm.project import Project
 from pytest_cppython.plugin import InterfaceUnitTests
-from pytest_mock import MockerFixture
 
 from cppython_pdm.plugin import CPPythonPlugin
 
