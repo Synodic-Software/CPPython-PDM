@@ -36,15 +36,22 @@ class CPPythonPlugin(Interface):
         """
         TODO
         """
+        verbose = bool(project.core.ui.verbosity)
+
+        if verbose:
+            project.core.ui.echo("CPPython: Entered 'on_post_install'")
+
         self.project = project
 
         pdm_pyproject = project.pyproject
 
         if pdm_pyproject is None:
+            if verbose:
+                project.core.ui.echo("CPPython: Project data was not available")
             return
 
         pyproject = PyProject(**pdm_pyproject)
-        configuration = ProjectConfiguration(verbose=bool(project.core.ui.verbosity))
+        configuration = ProjectConfiguration(verbose)
         cppython_project = CPPythonProject(configuration, self, pyproject)
 
         cppython_project.install()

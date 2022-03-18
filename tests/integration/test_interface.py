@@ -22,3 +22,12 @@ class TestCPPythonInterface(InterfaceIntegrationTests):
             ConsoleInterface -- The Interface object to use for the CPPython defined tests
         """
         return CPPythonPlugin(Core())
+
+    def test_entrypoint(self):
+        """
+        TODO
+        """
+        core = Core()
+        core.load_plugins()
+
+        # TODO Verify cppython-pdm is registered

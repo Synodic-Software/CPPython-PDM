@@ -3,7 +3,7 @@ TODO
 """
 import pytest
 from pdm import Core
-from pdm.project import Project
+from pdm.cli.commands.run import run_script_if_present
 from pytest_cppython.plugin import InterfaceUnitTests
 
 from cppython_pdm.plugin import CPPythonPlugin
@@ -29,4 +29,9 @@ class TestCPPythonInterface(InterfaceUnitTests):
         """
         TODO
         """
-        interface.on_post_install(project=Project(Core(), None), candidates={}, dry_run=False)
+
+        runner = run_script_if_present("post_install")
+        runner()
+        # signals.post_install.connect(, weak=False)
+
+        # interface.on_post_install(project=Project(Core(), None), candidates={}, dry_run=False)
