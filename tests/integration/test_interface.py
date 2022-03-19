@@ -4,6 +4,7 @@ TODO
 import pytest
 from pdm import Core
 from pytest_cppython.plugin import InterfaceIntegrationTests
+from pytest_mock import MockerFixture
 
 from cppython_pdm.plugin import CPPythonPlugin
 
@@ -23,11 +24,14 @@ class TestCPPythonInterface(InterfaceIntegrationTests):
         """
         return CPPythonPlugin(Core())
 
-    def test_entrypoint(self):
+    def test_entrypoint(self, mocker: MockerFixture):
         """
-        TODO
+        Verify that this project's plugin hook is setup correctly
         """
+
+        patch = mocker.patch("cppython_pdm.plugin.CPPythonPlugin")
+
         core = Core()
         core.load_plugins()
 
-        # TODO Verify cppython-pdm is registered
+        assert patch.called

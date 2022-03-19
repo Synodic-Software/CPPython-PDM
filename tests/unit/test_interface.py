@@ -2,9 +2,10 @@
 TODO
 """
 import pytest
+from cppython.data import default_pyproject
 from pdm import Core
-from pdm.cli.commands.run import run_script_if_present
 from pytest_cppython.plugin import InterfaceUnitTests
+from pytest_mock import MockerFixture
 
 from cppython_pdm.plugin import CPPythonPlugin
 
@@ -25,13 +26,13 @@ class TestCPPythonInterface(InterfaceUnitTests):
 
         return CPPythonPlugin(Core())
 
-    def test_install(self, interface: CPPythonPlugin):
+    def test_install(self, interface: CPPythonPlugin, mocker: MockerFixture):
         """
         TODO
         """
 
-        runner = run_script_if_present("post_install")
-        runner()
-        # signals.post_install.connect(, weak=False)
+        pdm_project = mocker.MagicMock()
+        pdm_project.core.ui.verbosity = 0
+        pdm_project.pyproject = dict(default_pyproject)
 
-        # interface.on_post_install(project=Project(Core(), None), candidates={}, dry_run=False)
+        interface.on_post_install(project=pdm_project, candidates={}, dry_run=False)
