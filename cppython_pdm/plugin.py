@@ -23,14 +23,15 @@ class CPPythonPlugin(Interface):
         post_install.connect(self.on_post_install)
 
     def read_generator_data(self, generator_data_type: Type[GeneratorDataType]) -> GeneratorDataType:
+        """
+        TODO
+        """
         return generator_data_type()
 
     def write_pyproject(self) -> None:
         """
         TODO:
         """
-
-        pass
 
     def on_post_install(self, project: Project, candidates: dict[str, Candidate], dry_run: bool):
         """
@@ -50,9 +51,8 @@ class CPPythonPlugin(Interface):
                 project.core.ui.echo("CPPython: Project data was not available")
             return
 
-        pyproject = PyProject(**pdm_pyproject)
         configuration = ProjectConfiguration(verbose)
-        cppython_project = CPPythonProject(configuration, self, pyproject)
+        cppython_project = CPPythonProject(configuration, self, pdm_pyproject)
 
         cppython_project.install()
 
