@@ -6,7 +6,7 @@ from typing import Type
 
 from cppython.project import Project as CPPythonProject
 from cppython.project import ProjectConfiguration
-from cppython_core.schema import GeneratorDataType, Interface, PyProject
+from cppython_core.schema import GeneratorDataType, Interface
 from pdm import Core, Project
 from pdm.models.candidates import Candidate
 from pdm.signals import post_install
