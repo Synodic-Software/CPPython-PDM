@@ -5,7 +5,7 @@ import pytest
 from cppython.data import default_pyproject
 from pdm import Core
 from pytest_cppython.plugin import InterfaceUnitTests
-from pytest_mock import MockerFixture
+from pytest_mock.plugin import MockerFixture
 
 from cppython_pdm.plugin import CPPythonPlugin
 
