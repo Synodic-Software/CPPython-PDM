@@ -15,7 +15,7 @@ dynamic = ["version"]
 requires-python = ">=3.10"
 
 dependencies = [
-  "cppython>=0.5.3",
+  "cppython>=0.6.0",
   "pdm>=1.14.0",
 ]
 

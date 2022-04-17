@@ -2,6 +2,7 @@
 TODO
 """
 
+import logging
 from typing import Type
 
 from cppython.project import Project as CPPythonProject
@@ -20,9 +21,10 @@ class CPPythonPlugin(Interface):
     def __init__(self, core: Core) -> None:
 
         # NOTE: Verbosity is not filled
-        self.configuration = ProjectConfiguration(verbose=bool(core.ui.verbosity))
-
+        self.configuration = ProjectConfiguration()
+        self.configuration.verbosity = core.ui.verbosity
         self.project = None
+        self.logger = logging.getLogger(__name__)
 
         post_install.connect(self.on_post_install, weak=False)
 
@@ -44,23 +46,21 @@ class CPPythonPlugin(Interface):
 
         # Attach configuration for CPPythonPlugin callbacks
         self.project = project
-        self.configuration.verbose = bool(project.core.ui.verbosity)
+        self.configuration.verbosity = bool(project.core.ui.verbosity)
 
-        if self.configuration.verbose:
-            self.print("CPPython: Entered 'on_post_install'")
+        self.logger.info("CPPython: Entered 'on_post_install'")
 
         pdm_pyproject = project.pyproject
 
         if pdm_pyproject is None:
-            if self.configuration.verbose:
-                self.print("CPPython: Project data was not available")
+            self.logger.info("CPPython: Project data was not available")
             return
 
         cppython_project = CPPythonProject(self.configuration, self, pdm_pyproject)
 
         cppython_project.install()
 
-    def print(self, string: str) -> None:
-
-        if self.project:
-            self.project.core.ui.echo(string)
+    def register_logger(self, logger: logging.Logger) -> None:
+        """
+        TODO
+        """
