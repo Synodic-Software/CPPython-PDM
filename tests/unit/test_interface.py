@@ -47,4 +47,4 @@ class TestCPPythonInterface(InterfaceUnitTests):
 
         plugin = CPPythonPlugin(pdm_core)
 
-        assert plugin.configuration.verbose
+        assert plugin.configuration.verbosity
