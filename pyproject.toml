@@ -15,8 +15,8 @@ dynamic = ["version"]
 requires-python = ">=3.10"
 
 dependencies = [
-  "cppython>=0.6.0",
-  "pdm>=1.14.0",
+  "cppython>=0.6.1.dev4",
+  "pdm>=1.14.1",
 ]
 
 [project.license-files]
@@ -26,23 +26,27 @@ paths = ["LICENSE.md"]
 homepage = "https://github.com/Synodic-Software/CPPython-PDM"
 repository = "https://github.com/Synodic-Software/CPPython-PDM"
 
+[project.optional-dependencies]
 [tool.pdm]
 version = {use_scm = true}
 
 [tool.pdm.dev-dependencies]
 lint = [
   "black>=22.3.0",
-  "pylint>=2.13.5",
+  "pylint>=2.13.7",
   "isort>=5.10.1",
 ]
 test = [
-  "pytest >=7.1.1",
+  "pytest >=7.1.2",
   "pytest-cov>=3.0.0",
   "pytest-mock>=3.7.0",
   "pytest-cppython>=0.1.1",
 ]
 
 # Register PDM entry point
+dev = [
+  "pytest-cppython>=0.1.7.dev0",
+]
 [project.entry-points.pdm]
 cppython = "cppython_pdm.plugin:CPPythonPlugin"
 
