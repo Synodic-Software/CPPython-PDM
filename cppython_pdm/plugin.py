@@ -7,7 +7,7 @@ from typing import Type
 
 from cppython.project import Project as CPPythonProject
 from cppython.project import ProjectConfiguration
-from cppython_core.schema import GeneratorDataType, Interface
+from cppython_core.schema import GeneratorDataT, Interface, InterfaceConfiguration
 from pdm import Core, Project
 from pdm.models.candidates import Candidate
 from pdm.signals import post_install
@@ -20,15 +20,26 @@ class CPPythonPlugin(Interface):
 
     def __init__(self, core: Core) -> None:
 
-        # NOTE: Verbosity is not filled
-        self.configuration = ProjectConfiguration()
-        self.configuration.verbosity = core.ui.verbosity
+        # NOTE: Verbosity is not filled by PDM
+        self.project_configuration = ProjectConfiguration()
+        self.project_configuration.verbosity = core.ui.verbosity
         self.project = None
-        self.logger = logging.getLogger(__name__)
+
+        self.logger = logging.getLogger("cppython")
 
         post_install.connect(self.on_post_install, weak=False)
 
-    def read_generator_data(self, generator_data_type: Type[GeneratorDataType]) -> GeneratorDataType:
+        interface_configuration = InterfaceConfiguration()
+        super().__init__(interface_configuration)
+
+    @staticmethod
+    def name() -> str:
+        """
+        TODO
+        """
+        return "pdm"
+
+    def read_generator_data(self, generator_data_type: Type[GeneratorDataT]) -> GeneratorDataT:
         """
         TODO
         """
@@ -46,7 +57,7 @@ class CPPythonPlugin(Interface):
 
         # Attach configuration for CPPythonPlugin callbacks
         self.project = project
-        self.configuration.verbosity = bool(project.core.ui.verbosity)
+        self.project_configuration.verbosity = bool(project.core.ui.verbosity)
 
         self.logger.info("CPPython: Entered 'on_post_install'")
 
@@ -56,11 +67,6 @@ class CPPythonPlugin(Interface):
             self.logger.info("CPPython: Project data was not available")
             return
 
-        cppython_project = CPPythonProject(self.configuration, self, pdm_pyproject)
+        cppython_project = CPPythonProject(self.project_configuration, self, pdm_pyproject)
 
         cppython_project.install()
-
-    def register_logger(self, logger: logging.Logger) -> None:
-        """
-        TODO
-        """
