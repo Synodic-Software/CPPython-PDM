@@ -2,7 +2,6 @@
 TODO
 """
 
-import logging
 from typing import Type
 
 from cppython.project import Project as CPPythonProject
@@ -24,8 +23,6 @@ class CPPythonPlugin(Interface):
         self.project_configuration = ProjectConfiguration()
         self.project_configuration.verbosity = core.ui.verbosity
         self.project = None
-
-        self.logger = logging.getLogger("cppython")
 
         post_install.connect(self.on_post_install, weak=False)
 
