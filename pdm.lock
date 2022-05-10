@@ -1,6 +1,6 @@
 [[package]]
 name = "astroid"
-version = "2.11.4"
+version = "2.11.5"
 requires_python = ">=3.6.2"
 summary = "An abstract syntax tree for Python with inference support."
 dependencies = [
@@ -73,7 +73,7 @@ dependencies = [
 
 [[package]]
 name = "cppython"
-version = "0.6.1.dev19"
+version = "0.6.1.dev24"
 requires_python = ">=3.10"
 summary = "A Python package manager agnostic plugin integrating a transparent Conan and CMake workflow."
 dependencies = [
@@ -350,9 +350,9 @@ lock_version = "3.1"
 content_hash = "sha256:3ec5213a846674d1c07e03ece5e67507e3429724e93c35513326ad5cc2d41818"
 
 [metadata.files]
-"astroid 2.11.4" = [
-    {file = "astroid-2.11.4-py3-none-any.whl", hash = "sha256:da0632b7c046d8361dfe1b1abb2e085a38624961fabe2997565a9c06c1be9d9a"},
-    {file = "astroid-2.11.4.tar.gz", hash = "sha256:561dc6015eecce7e696ff7e3b40434bc56831afeff783f0ea853e19c4f635c06"},
+"astroid 2.11.5" = [
+    {file = "astroid-2.11.5-py3-none-any.whl", hash = "sha256:14ffbb4f6aa2cf474a0834014005487f7ecd8924996083ab411e7fa0b508ce0b"},
+    {file = "astroid-2.11.5.tar.gz", hash = "sha256:f4e4ec5294c4b07ac38bab9ca5ddd3914d4bf46f9006eb5c0ae755755061044e"},
 ]
 "atomicwrites 1.4.0" = [
     {file = "atomicwrites-1.4.0-py2.py3-none-any.whl", hash = "sha256:6d1784dea7c0c8d4a5172b6c620f40b6e4cbfdf96d783691f2e1302a7b88e197"},
@@ -441,9 +441,9 @@ content_hash = "sha256:3ec5213a846674d1c07e03ece5e67507e3429724e93c35513326ad5cc
     {file = "coverage-6.3.2-pp36.pp37.pp38-none-any.whl", hash = "sha256:18d520c6860515a771708937d2f78f63cc47ab3b80cb78e86573b0a760161faf"},
     {file = "coverage-6.3.2.tar.gz", hash = "sha256:03e2a7826086b91ef345ff18742ee9fc47a6839ccd517061ef8fa1976e652ce9"},
 ]
-"cppython 0.6.1.dev19" = [
-    {file = "cppython-0.6.1.dev19-py3-none-any.whl", hash = "sha256:584e44391b271caa578bdd92cb94775876c22a9cd729e0dabeb315b00d76d8d2"},
-    {file = "cppython-0.6.1.dev19.tar.gz", hash = "sha256:fbe55e0b307a102b9d04937489e94908490cc84b929428cdc9f1be2ed5bcfe1b"},
+"cppython 0.6.1.dev24" = [
+    {file = "cppython-0.6.1.dev24-py3-none-any.whl", hash = "sha256:cee6bc34abefd91b94493a1b00d7e3bc2842b2196671f9df3c64ab9630dc4fe0"},
+    {file = "cppython-0.6.1.dev24.tar.gz", hash = "sha256:d9ff2150fdd6e23d158edce0d84bf2e7d0344f2859b28ac4ff9d45214b8982c3"},
 ]
 "cppython-core 0.3.3.dev14" = [
     {file = "cppython_core-0.3.3.dev14-py3-none-any.whl", hash = "sha256:e9735b3029c97b2a3d9ae92c587a734c90ff655ebbfb39d44164c728a499be09"},
