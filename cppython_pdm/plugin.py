@@ -2,7 +2,6 @@
 TODO
 """
 
-from tabnanny import verbose
 from typing import Type
 
 from cppython.project import Project as CPPythonProject
