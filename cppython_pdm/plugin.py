@@ -2,6 +2,7 @@
 TODO
 """
 
+from tabnanny import verbose
 from typing import Type
 
 from cppython.project import Project as CPPythonProject
@@ -18,11 +19,6 @@ class CPPythonPlugin(Interface):
     """
 
     def __init__(self, core: Core) -> None:
-
-        # NOTE: Verbosity is not filled by PDM
-        self.project_configuration = ProjectConfiguration()
-        self.project_configuration.verbosity = core.ui.verbosity
-        self.project = None
 
         post_install.connect(self.on_post_install, weak=False)
 
@@ -52,9 +48,11 @@ class CPPythonPlugin(Interface):
         TODO
         """
 
+        root_path = project.pyproject_file.parent.absolute()
+
         # Attach configuration for CPPythonPlugin callbacks
-        self.project = project
-        self.project_configuration.verbosity = bool(project.core.ui.verbosity)
+        project_configuration = ProjectConfiguration(root_path=root_path)
+        project_configuration.verbosity = project.core.ui.verbosity
 
         self.logger.info("CPPython: Entered 'on_post_install'")
 
@@ -64,6 +62,6 @@ class CPPythonPlugin(Interface):
             self.logger.info("CPPython: Project data was not available")
             return
 
-        cppython_project = CPPythonProject(self.project_configuration, self, pdm_pyproject)
+        cppython_project = CPPythonProject(project_configuration, self, pdm_pyproject)
 
         cppython_project.install()
