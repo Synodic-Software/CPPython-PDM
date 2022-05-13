@@ -73,7 +73,7 @@ dependencies = [
 
 [[package]]
 name = "cppython"
-version = "0.6.1.dev30"
+version = "0.6.1.dev31"
 requires_python = ">=3.10"
 summary = "A Python package manager agnostic plugin integrating a transparent Conan and CMake workflow."
 dependencies = [
@@ -439,9 +439,9 @@ content_hash = "sha256:664aad3e01bc8bae7f90093dc49fc1ccce39f733e7525be49a05db731
     {file = "coverage-6.3.3-cp39-cp39-win32.whl", hash = "sha256:f8cabc5fd0091976ab7b020f5708335033e422de25e20ddf9416bdce2b7e07d8"},
     {file = "coverage-6.3.3-cp39-cp39-win_amd64.whl", hash = "sha256:9c9441d57b0963cf8340268ad62fc83de61f1613034b79c2b1053046af0c5284"},
 ]
-"cppython 0.6.1.dev30" = [
-    {file = "cppython-0.6.1.dev30-py3-none-any.whl", hash = "sha256:21aacd91cfa4e4226d7735fb4ad0e379f5e35c98bf29f53ec81b508bab75d3e5"},
-    {file = "cppython-0.6.1.dev30.tar.gz", hash = "sha256:fcd6bcf67a393d0bed6bcba614601795f8724e716c691280f8d404515a983693"},
+"cppython 0.6.1.dev31" = [
+    {file = "cppython-0.6.1.dev31-py3-none-any.whl", hash = "sha256:c5c1f303d39ae24bce75a06f48a3f14d0442d38e46d0e3d9dd34112f8970c157"},
+    {file = "cppython-0.6.1.dev31.tar.gz", hash = "sha256:a3feaf6cefdaf635a7dfe0a5e6a8625abd96cb9ca584c29b15a7745c52754d17"},
 ]
 "cppython-core 0.3.3.dev19" = [
     {file = "cppython_core-0.3.3.dev19-py3-none-any.whl", hash = "sha256:98f1cf0ec9789b8823279c471e9500f9ff99bd8659f42259cc1b9eac94abdc9e"},
