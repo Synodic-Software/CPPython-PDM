@@ -41,15 +41,3 @@ class TestCPPythonInterface(InterfaceUnitTests):
         pdm_project.pyproject = dict(default_pyproject)
 
         interface.on_post_install(project=pdm_project, candidates={}, dry_run=False)
-
-    def test_verbosity(self, interface: CPPythonPlugin, mocker: MockerFixture):
-        """
-        TODO
-        """
-
-        pdm_core = mocker.MagicMock()
-        pdm_core.ui.verbosity = 1
-
-        plugin = CPPythonPlugin(pdm_core)
-
-        assert plugin.project_configuration.verbosity

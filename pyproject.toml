@@ -40,13 +40,10 @@ test = [
   "pytest >=7.1.2",
   "pytest-cov>=3.0.0",
   "pytest-mock>=3.7.0",
-  "pytest-cppython>=0.1.1",
+  "pytest-cppython>=0.1.7.dev0",
 ]
 
 # Register PDM entry point
-dev = [
-  "pytest-cppython>=0.1.7.dev0",
-]
 [project.entry-points.pdm]
 cppython = "cppython_pdm.plugin:CPPythonPlugin"
 
