@@ -73,7 +73,7 @@ dependencies = [
 
 [[package]]
 name = "cppython"
-version = "0.6.1.dev39"
+version = "0.6.1.dev42"
 requires_python = ">=3.10"
 summary = "A Python package manager agnostic plugin integrating a transparent Conan and CMake workflow."
 dependencies = [
@@ -95,7 +95,7 @@ dependencies = [
 
 [[package]]
 name = "dill"
-version = "0.3.5"
+version = "0.3.5.1"
 requires_python = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, !=3.6.*"
 summary = "serialize all of python"
 
@@ -195,7 +195,7 @@ dependencies = [
 
 [[package]]
 name = "pip"
-version = "22.1"
+version = "22.1.1"
 requires_python = ">=3.7"
 summary = "The PyPA recommended tool for installing Python packages."
 
@@ -441,17 +441,17 @@ content_hash = "sha256:664aad3e01bc8bae7f90093dc49fc1ccce39f733e7525be49a05db731
     {file = "coverage-6.3.3-pp36.pp37.pp38-none-any.whl", hash = "sha256:d522f1dc49127eab0bfbba4e90fa068ecff0899bbf61bf4065c790ddd6c177fe"},
     {file = "coverage-6.3.3.tar.gz", hash = "sha256:2781c43bffbbec2b8867376d4d61916f5e9c4cc168232528562a61d1b4b01879"},
 ]
-"cppython 0.6.1.dev39" = [
-    {file = "cppython-0.6.1.dev39-py3-none-any.whl", hash = "sha256:b7ca640b0c5f015ce9572fd3f773a826b19297cddac6a634fd0176da0f7a95a2"},
-    {file = "cppython-0.6.1.dev39.tar.gz", hash = "sha256:cc4425bfe4b226b225e590a21cba5f0fadf33503b0d5d11759feac66ff500ee3"},
+"cppython 0.6.1.dev42" = [
+    {file = "cppython-0.6.1.dev42-py3-none-any.whl", hash = "sha256:d6275c955c2090e60e0439d49af04b0bbff6a1d1ac108f4a33d7687f26fdb1fc"},
+    {file = "cppython-0.6.1.dev42.tar.gz", hash = "sha256:d9c0ece6411bd54d60951ecef017dd6addc2dc1884dba6f1b0d370dc407fbe37"},
 ]
 "cppython-core 0.3.3.dev30" = [
     {file = "cppython_core-0.3.3.dev30-py3-none-any.whl", hash = "sha256:ab950bc91a2f179ad9d55422d31c0a1d86cbb1d176499147f94fc89748b8795c"},
     {file = "cppython-core-0.3.3.dev30.tar.gz", hash = "sha256:67deac5a1660f0ad3e0f39c1235bd6272bd9a438ee2760ad1ac7e3bbc0260675"},
 ]
-"dill 0.3.5" = [
-    {file = "dill-0.3.5-py2.py3-none-any.whl", hash = "sha256:6eb4bb70a98509e69204e621942c4306580d5bf2229f450f04fcf2efca3908e5"},
-    {file = "dill-0.3.5.tar.gz", hash = "sha256:3a11d19c15d409296a2ee714b1dbd5efb733a329f0d89c0e58aad6154ab6f2f5"},
+"dill 0.3.5.1" = [
+    {file = "dill-0.3.5.1-py2.py3-none-any.whl", hash = "sha256:33501d03270bbe410c72639b350e941882a8b0fd55357580fbc873fba0c59302"},
+    {file = "dill-0.3.5.1.tar.gz", hash = "sha256:d75e41f3eff1eee599d738e76ba8f4ad98ea229db8b085318aa2b3333a208c86"},
 ]
 "findpython 0.1.6" = [
     {file = "findpython-0.1.6-py3-none-any.whl", hash = "sha256:79ec09965019b73c83f49df0de9a056d2055abf694f3813966a4841e80cf734e"},
@@ -536,9 +536,9 @@ content_hash = "sha256:664aad3e01bc8bae7f90093dc49fc1ccce39f733e7525be49a05db731
     {file = "pep517-0.12.0-py2.py3-none-any.whl", hash = "sha256:dd884c326898e2c6e11f9e0b64940606a93eb10ea022a2e067959f3a110cf161"},
     {file = "pep517-0.12.0.tar.gz", hash = "sha256:931378d93d11b298cf511dd634cf5ea4cb249a28ef84160b3247ee9afb4e8ab0"},
 ]
-"pip 22.1" = [
-    {file = "pip-22.1-py3-none-any.whl", hash = "sha256:802e797fb741be1c2d475533d4ea951957e4940091422bd4a24848a7ac95609d"},
-    {file = "pip-22.1.tar.gz", hash = "sha256:2debf847016cfe643fa1512e2d781d3ca9e5c878ba0652583842d50cc2bcc605"},
+"pip 22.1.1" = [
+    {file = "pip-22.1.1-py3-none-any.whl", hash = "sha256:e7bcf0b2cbdec2af84cc1b7b79b25fdbd7228fbdb61a4dca0b82810d0ba9d18b"},
+    {file = "pip-22.1.1.tar.gz", hash = "sha256:8dfb15d8a1c3d3085a4cbe11f29e19527dfaf2ba99354326fd62cec013eaee81"},
 ]
 "platformdirs 2.5.2" = [
     {file = "platformdirs-2.5.2-py3-none-any.whl", hash = "sha256:027d8e83a2d7de06bbac4e5ef7e023c02b863d7ea5d079477e722bb41ab25788"},
