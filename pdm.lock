@@ -73,7 +73,7 @@ dependencies = [
 
 [[package]]
 name = "cppython"
-version = "0.6.1.dev45"
+version = "0.6.1.dev47"
 requires_python = ">=3.10"
 summary = "A Python package manager agnostic plugin integrating a transparent Conan and CMake workflow."
 dependencies = [
@@ -323,7 +323,7 @@ summary = "A lil' TOML parser"
 
 [[package]]
 name = "tomlkit"
-version = "0.10.2"
+version = "0.11.0"
 requires_python = ">=3.6,<4.0"
 summary = "Style preserving TOML library"
 
@@ -441,9 +441,9 @@ content_hash = "sha256:664aad3e01bc8bae7f90093dc49fc1ccce39f733e7525be49a05db731
     {file = "coverage-6.4-pp36.pp37.pp38-none-any.whl", hash = "sha256:e637ae0b7b481905358624ef2e81d7fb0b1af55f5ff99f9ba05442a444b11e45"},
     {file = "coverage-6.4.tar.gz", hash = "sha256:727dafd7f67a6e1cad808dc884bd9c5a2f6ef1f8f6d2f22b37b96cb0080d4f49"},
 ]
-"cppython 0.6.1.dev45" = [
-    {file = "cppython-0.6.1.dev45-py3-none-any.whl", hash = "sha256:182c6585d7636af385c3f73f3af78db9985a9589b028de0e396f57ee34fbc40e"},
-    {file = "cppython-0.6.1.dev45.tar.gz", hash = "sha256:4c0dc9040ecd648aeaccccfef16983714d41acef2edecac1b43279d38636c71e"},
+"cppython 0.6.1.dev47" = [
+    {file = "cppython-0.6.1.dev47-py3-none-any.whl", hash = "sha256:6056d70475f0f30c4e070dc0273adf6f7117920d813d2ed4b0f2054d6373d586"},
+    {file = "cppython-0.6.1.dev47.tar.gz", hash = "sha256:78a82aace8fa1acbdc23db2fd74c93147bf64beeab6fb36f2002b58a6e6b735a"},
 ]
 "cppython-core 0.3.3.dev30" = [
     {file = "cppython_core-0.3.3.dev30-py3-none-any.whl", hash = "sha256:ab950bc91a2f179ad9d55422d31c0a1d86cbb1d176499147f94fc89748b8795c"},
@@ -633,9 +633,9 @@ content_hash = "sha256:664aad3e01bc8bae7f90093dc49fc1ccce39f733e7525be49a05db731
     {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
     {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
 ]
-"tomlkit 0.10.2" = [
-    {file = "tomlkit-0.10.2-py3-none-any.whl", hash = "sha256:905cf92c2111ef80d355708f47ac24ad1b6fc2adc5107455940088c9bbecaedb"},
-    {file = "tomlkit-0.10.2.tar.gz", hash = "sha256:30d54c0b914e595f3d10a87888599eab5321a2a69abc773bbefff51599b72db6"},
+"tomlkit 0.11.0" = [
+    {file = "tomlkit-0.11.0-py3-none-any.whl", hash = "sha256:0f4050db66fd445b885778900ce4dd9aea8c90c4721141fde0d6ade893820ef1"},
+    {file = "tomlkit-0.11.0.tar.gz", hash = "sha256:71ceb10c0eefd8b8f11fe34e8a51ad07812cb1dc3de23247425fbc9ddc47b9dd"},
 ]
 "typing-extensions 4.2.0" = [
     {file = "typing_extensions-4.2.0-py3-none-any.whl", hash = "sha256:6657594ee297170d19f67d55c05852a874e7eb634f4f753dbd667855e07c1708"},
