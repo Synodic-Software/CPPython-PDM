@@ -38,6 +38,7 @@ class TestCPPythonInterface(InterfaceUnitTests):
 
         pdm_project = mocker.MagicMock()
         pdm_project.core.ui.verbosity = 0
+        pdm_project.core.version = "1.0.0"
         pdm_project.pyproject = dict(default_pyproject)
 
         interface.on_post_install(project=pdm_project, candidates={}, dry_run=False)
