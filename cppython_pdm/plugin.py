@@ -50,7 +50,7 @@ class CPPythonPlugin(Interface):
         root_path = project.pyproject_file.parent.absolute()
 
         # Attach configuration for CPPythonPlugin callbacks
-        project_configuration = ProjectConfiguration(root_path=root_path)
+        project_configuration = ProjectConfiguration(root_path=root_path, version=project.core.version)
         project_configuration.verbosity = project.core.ui.verbosity
 
         self.logger.info("CPPython: Entered 'on_post_install'")
