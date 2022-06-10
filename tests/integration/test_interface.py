@@ -9,7 +9,7 @@ from pytest_mock import MockerFixture
 from cppython_pdm.plugin import CPPythonPlugin
 
 
-class TestCPPythonInterface(InterfaceIntegrationTests):
+class TestCPPythonInterface(InterfaceIntegrationTests[CPPythonPlugin]):
     """
     The tests for the PDM interface
     """
