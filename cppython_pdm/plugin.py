@@ -7,8 +7,9 @@ from typing import Type
 from cppython.project import Project as CPPythonProject
 from cppython.project import ProjectConfiguration
 from cppython_core.schema import GeneratorDataT, Interface, InterfaceConfiguration
-from pdm import Core, Project
+from pdm.core import Core
 from pdm.models.candidates import Candidate
+from pdm.project import Project
 from pdm.signals import post_install
 
 
@@ -47,10 +48,10 @@ class CPPythonPlugin(Interface):
         TODO
         """
 
-        root_path = project.pyproject_file.parent.absolute()
+        pyproject_file = project.pyproject_file.absolute()
 
         # Attach configuration for CPPythonPlugin callbacks
-        project_configuration = ProjectConfiguration(root_path=root_path, version=project.core.version)
+        project_configuration = ProjectConfiguration(pyproject_file=pyproject_file, version=project.core.version)
         project_configuration.verbosity = project.core.ui.verbosity
 
         self.logger.info("CPPython: Entered 'on_post_install'")

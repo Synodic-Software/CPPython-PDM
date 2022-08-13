@@ -1,10 +1,11 @@
 """
 TODO
 """
+from pathlib import Path
+from typing import Type
+
 import pytest
 from cppython_core.schema import PEP621, CPPythonData, PyProject, TargetEnum, ToolData
-from pdm import Core
-from pdm.project.core import Project
 from pytest_cppython.plugin import InterfaceUnitTests
 from pytest_mock.plugin import MockerFixture
 
@@ -21,16 +22,12 @@ class TestCPPythonInterface(InterfaceUnitTests[CPPythonPlugin]):
     The tests for the PDM interface
     """
 
-    @pytest.fixture(name="interface")
-    def fixture_interface(self) -> CPPythonPlugin:
+    @pytest.fixture(name="interface_type")
+    def fixture_interface_type(self) -> Type[CPPythonPlugin]:
         """
-        Override of the plugin provided interface fixture.
-
-        Returns:
-            ConsoleInterface -- The Interface object to use for the CPPython defined tests
+        A required testing hook that allows type generation
         """
-
-        return CPPythonPlugin(Core())
+        return CPPythonPlugin
 
     def test_install(self, interface: CPPythonPlugin, mocker: MockerFixture):
         """
@@ -40,6 +37,7 @@ class TestCPPythonInterface(InterfaceUnitTests[CPPythonPlugin]):
         pdm_project = mocker.MagicMock()
         pdm_project.core.ui.verbosity = 0
         pdm_project.core.version = "1.0.0"
+        pdm_project.pyproject_file = Path("pyproject.toml")
         pdm_project.pyproject = dict(default_pyproject)
 
         interface.on_post_install(project=pdm_project, candidates={}, dry_run=False)
