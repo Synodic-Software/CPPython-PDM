@@ -16,7 +16,7 @@ requires-python = ">=3.10"
 
 dependencies = [
   "cppython>=0.7.0.dev1",
-  "pdm>=1.15.2",
+  "pdm>=2.1.1",
 ]
 
 [project.license-files]
@@ -32,14 +32,14 @@ version = {use_scm = true}
 
 [tool.pdm.dev-dependencies]
 lint = [
-  "black>=22.3.0",
-  "pylint>=2.13.8",
+  "black>=22.6.0",
+  "pylint>=2.14.5",
   "isort>=5.10.1",
 ]
 test = [
   "pytest >=7.1.2",
   "pytest-cov>=3.0.0",
-  "pytest-mock>=3.7.0",
+  "pytest-mock>=3.8.2",
   "pytest-cppython>=0.1.7.dev0",
 ]
 
@@ -54,7 +54,6 @@ testpaths = [
 
 [tool.black]
 line-length = 120
-preview = true
 
 [tool.isort]
 profile = "black"
