@@ -1,8 +1,10 @@
 """
 TODO
 """
+from typing import Type
+
 import pytest
-from pdm import Core
+from pdm.core import Core
 from pytest_cppython.plugin import InterfaceIntegrationTests
 from pytest_mock import MockerFixture
 
@@ -14,15 +16,12 @@ class TestCPPythonInterface(InterfaceIntegrationTests[CPPythonPlugin]):
     The tests for the PDM interface
     """
 
-    @pytest.fixture(name="interface")
-    def fixture_interface(self) -> CPPythonPlugin:
+    @pytest.fixture(name="interface_type")
+    def fixture_interface_type(self) -> Type[CPPythonPlugin]:
         """
-        Override of the plugin provided interface fixture.
-
-        Returns:
-            ConsoleInterface -- The Interface object to use for the CPPython defined tests
+        A required testing hook that allows type generation
         """
-        return CPPythonPlugin(Core())
+        return CPPythonPlugin
 
     def test_entrypoint(self, mocker: MockerFixture):
         """
