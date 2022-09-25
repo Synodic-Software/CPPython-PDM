@@ -46,7 +46,7 @@ test = [
 
 # Register PDM entry point
 [project.entry-points.pdm]
-cppython = "cppython_pdm.plugin:CPPythonPlugin"
+cppython = "cppython_pdm.plugin:pdm_entry_point"
 
 [tool.pdm.scripts]
 analyze = {shell = "pylint --verbose cppython_pdm tests"}

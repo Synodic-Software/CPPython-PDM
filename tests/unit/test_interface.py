@@ -1,8 +1,7 @@
+"""Unit tests for the interface
 """
-TODO
-"""
+
 from pathlib import Path
-from typing import Type
 
 import pytest
 from cppython_core.schema import PEP621, CPPythonData, PyProject, TargetEnum, ToolData
@@ -18,20 +17,24 @@ default_pyproject = PyProject(project=default_pep621, tool=default_tool_data)
 
 
 class TestCPPythonInterface(InterfaceUnitTests[CPPythonPlugin]):
-    """
-    The tests for the PDM interface
-    """
+    """The tests for the PDM interface"""
 
     @pytest.fixture(name="interface_type")
-    def fixture_interface_type(self) -> Type[CPPythonPlugin]:
+    def fixture_interface_type(self) -> type[CPPythonPlugin]:
+        """A required testing hook that allows type generation
+
+        Returns:
+            The plugin type
         """
-        A required testing hook that allows type generation
-        """
+
         return CPPythonPlugin
 
-    def test_install(self, interface: CPPythonPlugin, mocker: MockerFixture):
-        """
-        TODO
+    def test_install(self, interface: CPPythonPlugin, mocker: MockerFixture) -> None:
+        """Tests the post install path
+
+        Args:
+            interface: The constructed plugin
+            mocker: Mocker fixture for project mocking
         """
 
         pdm_project = mocker.MagicMock()
