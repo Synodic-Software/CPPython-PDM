@@ -6,7 +6,7 @@ from typing import Type
 
 from cppython.project import Project as CPPythonProject
 from cppython.project import ProjectConfiguration
-from cppython_core.schema import GeneratorDataT, Interface, InterfaceConfiguration
+from cppython_core.schema import Interface, InterfaceConfiguration, ProviderDataT
 from pdm.core import Core
 from pdm.models.candidates import Candidate
 from pdm.project import Project
@@ -19,7 +19,6 @@ class CPPythonPlugin(Interface):
     """
 
     def __init__(self, core: Core) -> None:
-
         post_install.connect(self.on_post_install, weak=False)
 
         interface_configuration = InterfaceConfiguration()
@@ -32,11 +31,11 @@ class CPPythonPlugin(Interface):
         """
         return "pdm"
 
-    def read_generator_data(self, generator_data_type: Type[GeneratorDataT]) -> GeneratorDataT:
+    def read_provider_data(self, provider_data_type: Type[ProviderDataT]) -> ProviderDataT:
         """
         TODO
         """
-        return generator_data_type()
+        return provider_data_type()
 
     def write_pyproject(self) -> None:
         """
