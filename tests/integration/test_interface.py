@@ -1,7 +1,5 @@
+"""Integration tests for the interface
 """
-TODO
-"""
-from typing import Type
 
 import pytest
 from pdm.core import Core
@@ -12,20 +10,35 @@ from cppython_pdm.plugin import CPPythonPlugin
 
 
 class TestCPPythonInterface(InterfaceIntegrationTests[CPPythonPlugin]):
-    """
-    The tests for the PDM interface
-    """
+    """The tests for the PDM interface"""
 
     @pytest.fixture(name="interface_type")
-    def fixture_interface_type(self) -> Type[CPPythonPlugin]:
-        """
-        A required testing hook that allows type generation
+    def fixture_interface_type(self) -> type[CPPythonPlugin]:
+        """A required testing hook that allows type generation
+
+        Returns:
+            The plugin type
         """
         return CPPythonPlugin
 
-    def test_entrypoint(self, mocker: MockerFixture):
+    @pytest.fixture(name="interface")
+    def fixture_interface(self, interface_type: type[CPPythonPlugin]) -> CPPythonPlugin:
+        """A hook allowing implementations to override the fixture
+
+        Args:
+            interface_type: An input interface type
+
+        Returns:
+            A newly constructed interface
         """
-        Verify that this project's plugin hook is setup correctly
+
+        return interface_type(Core())
+
+    def test_entrypoint(self, mocker: MockerFixture) -> None:
+        """Verify that this project's plugin hook is setup correctly
+
+        Args:
+            mocker: Mocker fixture for plugin patch
         """
 
         patch = mocker.patch("cppython_pdm.plugin.CPPythonPlugin")
