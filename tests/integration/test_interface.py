@@ -21,6 +21,19 @@ class TestCPPythonInterface(InterfaceIntegrationTests[CPPythonPlugin]):
         """
         return CPPythonPlugin
 
+    @pytest.fixture(name="interface")
+    def fixture_interface(self, interface_type: type[CPPythonPlugin]) -> CPPythonPlugin:
+        """A hook allowing implementations to override the fixture
+
+        Args:
+            interface_type: An input interface type
+
+        Returns:
+            A newly constructed interface
+        """
+
+        return interface_type(Core())
+
     def test_entrypoint(self, mocker: MockerFixture) -> None:
         """Verify that this project's plugin hook is setup correctly
 

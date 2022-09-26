@@ -5,6 +5,7 @@ from pathlib import Path
 
 import pytest
 from cppython_core.schema import PEP621, CPPythonData, PyProject, TargetEnum, ToolData
+from pdm.core import Core
 from pytest_cppython.plugin import InterfaceUnitTests
 from pytest_mock.plugin import MockerFixture
 
@@ -28,6 +29,18 @@ class TestCPPythonInterface(InterfaceUnitTests[CPPythonPlugin]):
         """
 
         return CPPythonPlugin
+
+    @pytest.fixture(name="interface")
+    def fixture_interface(self, interface_type: type[CPPythonPlugin]) -> CPPythonPlugin:
+        """A hook allowing implementations to override the fixture
+
+        Args:
+            interface_type: An input interface type
+
+        Returns:
+            A newly constructed interface
+        """
+        return interface_type(Core())
 
     def test_install(self, interface: CPPythonPlugin, mocker: MockerFixture) -> None:
         """Tests the post install path
