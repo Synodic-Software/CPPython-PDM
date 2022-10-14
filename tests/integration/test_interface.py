@@ -12,8 +12,8 @@ from cppython_pdm.plugin import CPPythonPlugin
 class TestCPPythonInterface(InterfaceIntegrationTests[CPPythonPlugin]):
     """The tests for the PDM interface"""
 
-    @pytest.fixture(name="interface_type")
-    def fixture_interface_type(self) -> type[CPPythonPlugin]:
+    @pytest.fixture(name="plugin_type")
+    def fixture_plugin_type(self) -> type[CPPythonPlugin]:
         """A required testing hook that allows type generation
 
         Returns:
@@ -22,17 +22,17 @@ class TestCPPythonInterface(InterfaceIntegrationTests[CPPythonPlugin]):
         return CPPythonPlugin
 
     @pytest.fixture(name="interface")
-    def fixture_interface(self, interface_type: type[CPPythonPlugin]) -> CPPythonPlugin:
+    def fixture_interface(self, plugin_type: type[CPPythonPlugin]) -> CPPythonPlugin:
         """A hook allowing implementations to override the fixture
 
         Args:
-            interface_type: An input interface type
+            plugin_type: An input interface type
 
         Returns:
             A newly constructed interface
         """
 
-        return interface_type(Core())
+        return plugin_type(Core())
 
     def test_entrypoint(self, mocker: MockerFixture) -> None:
         """Verify that this project's plugin hook is setup correctly

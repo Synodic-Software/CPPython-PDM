@@ -4,7 +4,8 @@
 from typing import Any
 
 from cppython.project import Project as CPPythonProject
-from cppython_core.schema import Interface, ProjectConfiguration, ProviderDataT
+from cppython_core.plugin_schema.interface import Interface
+from cppython_core.schema import ProjectConfiguration
 from pdm.core import Core
 from pdm.project.core import Project
 from pdm.signals import post_install
@@ -24,17 +25,6 @@ class CPPythonPlugin(Interface):
             The name
         """
         return "pdm"
-
-    def read_provider_data(self, provider_data_type: type[ProviderDataT]) -> ProviderDataT:
-        """Constructs type
-
-        Args:
-            provider_data_type: The type to construct
-
-        Returns:
-            Provider data type constructed
-        """
-        return provider_data_type()
 
     def write_pyproject(self) -> None:
         """Write to file"""

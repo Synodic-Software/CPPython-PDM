@@ -4,24 +4,20 @@
 from pathlib import Path
 
 import pytest
-from cppython_core.schema import PEP621, CPPythonData, PyProject, TargetEnum, ToolData
+from cppython_core.exceptions import PluginError
+from cppython_core.schema import PyProject
 from pdm.core import Core
 from pytest_cppython.plugin import InterfaceUnitTests
 from pytest_mock.plugin import MockerFixture
 
 from cppython_pdm.plugin import CPPythonPlugin
 
-default_pep621 = PEP621(name="test_name", version="1.0")
-default_cppython_data = CPPythonData(target=TargetEnum.EXE)
-default_tool_data = ToolData(cppython=default_cppython_data)
-default_pyproject = PyProject(project=default_pep621, tool=default_tool_data)
-
 
 class TestCPPythonInterface(InterfaceUnitTests[CPPythonPlugin]):
     """The tests for the PDM interface"""
 
-    @pytest.fixture(name="interface_type")
-    def fixture_interface_type(self) -> type[CPPythonPlugin]:
+    @pytest.fixture(name="plugin_type")
+    def fixture_plugin_type(self) -> type[CPPythonPlugin]:
         """A required testing hook that allows type generation
 
         Returns:
@@ -31,21 +27,22 @@ class TestCPPythonInterface(InterfaceUnitTests[CPPythonPlugin]):
         return CPPythonPlugin
 
     @pytest.fixture(name="interface")
-    def fixture_interface(self, interface_type: type[CPPythonPlugin]) -> CPPythonPlugin:
+    def fixture_interface(self, plugin_type: type[CPPythonPlugin]) -> CPPythonPlugin:
         """A hook allowing implementations to override the fixture
 
         Args:
-            interface_type: An input interface type
+            plugin_type: An input interface type
 
         Returns:
             A newly constructed interface
         """
-        return interface_type(Core())
+        return plugin_type(Core())
 
-    def test_install(self, interface: CPPythonPlugin, mocker: MockerFixture) -> None:
+    def test_install(self, project: PyProject, interface: CPPythonPlugin, mocker: MockerFixture) -> None:
         """Tests the post install path
 
         Args:
+            project: Mock project
             interface: The constructed plugin
             mocker: Mocker fixture for project mocking
         """
@@ -54,6 +51,7 @@ class TestCPPythonInterface(InterfaceUnitTests[CPPythonPlugin]):
         pdm_project.core.ui.verbosity = 0
         pdm_project.core.version = "1.0.0"
         pdm_project.pyproject_file = Path("pyproject.toml")
-        pdm_project.pyproject = dict(default_pyproject)
+        pdm_project.pyproject = project.dict(by_alias=True)
 
-        interface.on_post_install(project=pdm_project, candidates={}, dry_run=False)
+        with pytest.raises(PluginError):
+            interface.on_post_install(project=pdm_project, candidates={}, dry_run=False)
