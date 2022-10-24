@@ -41,7 +41,7 @@ class CPPythonPlugin(Interface):
         pyproject_file = project.pyproject_file.absolute()
 
         # Attach configuration for CPPythonPlugin callbacks
-        project_configuration = ProjectConfiguration(pyproject_file=pyproject_file, version=project.core.version)
+        project_configuration = ProjectConfiguration(pyproject_file=pyproject_file, version=project.meta.version)
         project_configuration.verbosity = project.core.ui.verbosity
 
         logger = self.logger()
