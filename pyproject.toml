@@ -2,7 +2,7 @@
 description = "Interface plugin for CPPython that hooks into PDM"
 name = "cppython-pdm"
 
-license-expression = "MIT"
+license = "MIT"
 
 authors = [
   {name = "Synodic Software", email = "contact@synodic.software"},
@@ -26,7 +26,6 @@ paths = ["LICENSE.md"]
 homepage = "https://github.com/Synodic-Software/CPPython-PDM"
 repository = "https://github.com/Synodic-Software/CPPython-PDM"
 
-[project.optional-dependencies]
 [tool.pdm]
 version = {use_scm = true}
 
