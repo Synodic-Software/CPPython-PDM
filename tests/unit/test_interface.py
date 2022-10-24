@@ -49,7 +49,7 @@ class TestCPPythonInterface(InterfaceUnitTests[CPPythonPlugin]):
 
         pdm_project = mocker.MagicMock()
         pdm_project.core.ui.verbosity = 0
-        pdm_project.core.version = "1.0.0"
+        pdm_project.meta.version = "1.0.0"
         pdm_project.pyproject_file = Path("pyproject.toml")
         pdm_project.pyproject = project.dict(by_alias=True)
 
