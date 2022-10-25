@@ -103,8 +103,8 @@ dependencies = [
 
 [[package]]
 name = "cppython"
-version = "0.7.1.dev18"
-requires_python = ">=3.10"
+version = "0.7.1.dev20"
+requires_python = ">=3.11"
 summary = "A Python management solution for C++ dependencies"
 dependencies = [
     "click>=8.1.3",
@@ -471,7 +471,7 @@ summary = "Module for decorators, wrappers and monkey patching."
 
 [metadata]
 lock_version = "4.0"
-content_hash = "sha256:1e45fbc45564557a8b42e2f987b1a501779bfe3bf30875781b5dacfce1b1f120"
+content_hash = "sha256:0550f53def016d2579f68a034009051fe48568e1695179560fde6b558d3c6222"
 
 [metadata.files]
 "astroid 2.12.12" = [
@@ -585,9 +585,9 @@ content_hash = "sha256:1e45fbc45564557a8b42e2f987b1a501779bfe3bf30875781b5dacfce
     {url = "https://files.pythonhosted.org/packages/ea/52/c08080405329326a7ff16c0dfdb4feefaa8edd7446413df67386fe1bbfe0/coverage-6.5.0-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:633713d70ad6bfc49b34ead4060531658dc6dfc9b3eb7d8a716d5873377ab745"},
     {url = "https://files.pythonhosted.org/packages/ff/27/339089b558672f04e62d0cd2d49b9280270bad3bc95de24e7eb03deb4638/coverage-6.5.0-cp311-cp311-win32.whl", hash = "sha256:98e8a10b7a314f454d9eff4216a9a94d143a7ee65018dd12442e898ee2310578"},
 ]
-"cppython 0.7.1.dev18" = [
-    {url = "https://files.pythonhosted.org/packages/27/38/0c2fd158410a276a402386ec1c3b52571c87c5c04e9666bd5b9fb6f15000/cppython-0.7.1.dev18-py3-none-any.whl", hash = "sha256:511627ae1a0b0618a1e64c56ee643f7506afa913c805ac3e636146b5a772904a"},
-    {url = "https://files.pythonhosted.org/packages/fb/f3/29580e747e1bca5808b6ca19c63409514b4cbaf69ddbabba52317e4d43c7/cppython-0.7.1.dev18.tar.gz", hash = "sha256:41d179411280137103562595cf0b1ab9322e17851f1951d390ca89423e5a46a5"},
+"cppython 0.7.1.dev20" = [
+    {url = "https://files.pythonhosted.org/packages/51/f2/94799eb4e879fe88eef26e50eb58e3898964d01f52296364a1bb719fc802/cppython-0.7.1.dev20.tar.gz", hash = "sha256:9461e2965273e4c36c47eb32e7bb2e0bb85649d11750ffa1267a56e9a56ebf5c"},
+    {url = "https://files.pythonhosted.org/packages/b4/88/0cdf0456e09c73d748a3a41124c90086964a728057c90908dab0fde5b164/cppython-0.7.1.dev20-py3-none-any.whl", hash = "sha256:26011717ceb27ea908e36a8eb677ef03d6fe9f80c57e2df8cad79e0fe2d3da26"},
 ]
 "cppython-core 0.6.1.dev21" = [
     {url = "https://files.pythonhosted.org/packages/76/32/583c4ea26988a826b487e3e09ab2c4c1f2351d2b204dde737e0249fd75aa/cppython_core-0.6.1.dev21-py3-none-any.whl", hash = "sha256:65697e84f3d07338067a3954e1e3cd699265452edb7a781bdf2d46822e332770"},
