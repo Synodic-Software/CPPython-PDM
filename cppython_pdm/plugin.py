@@ -1,11 +1,11 @@
 """Implementation of the PDM Interface Plugin
 """
 
+from logging import getLogger
 from typing import Any
 
 from cppython.project import Project as CPPythonProject
-from cppython_core.plugin_schema.interface import Interface
-from cppython_core.schema import ProjectConfiguration
+from cppython_core.schema import Interface, ProjectConfiguration
 from pdm.core import Core
 from pdm.project.core import Project
 from pdm.signals import post_install
@@ -16,18 +16,13 @@ class CPPythonPlugin(Interface):
 
     def __init__(self, _core: Core) -> None:
         post_install.connect(self.on_post_install, weak=False)
-
-    @staticmethod
-    def name() -> str:
-        """Name of the plugin
-
-        Returns:
-            The name
-        """
-        return "pdm"
+        self.logger = getLogger("cppython.interface.pdm")
 
     def write_pyproject(self) -> None:
         """Write to file"""
+
+    def write_configuration(self) -> None:
+        """Write to configuration"""
 
     def on_post_install(self, project: Project, dry_run: bool, **_kwargs: Any) -> None:
         """Called after a pdm install command is called
@@ -38,17 +33,20 @@ class CPPythonPlugin(Interface):
             _kwargs: Sink for unknown arguments
         """
 
-        pyproject_file = project.pyproject_file.absolute()
+        pyproject_file = project.root.absolute() / project.PYPROJECT_FILENAME
 
         # Attach configuration for CPPythonPlugin callbacks
-        project_configuration = ProjectConfiguration(pyproject_file=pyproject_file, version=project.meta.version)
-        project_configuration.verbosity = project.core.ui.verbosity
+        version = project.pyproject.metadata.get("version")
+        verbosity = project.core.ui.verbosity
 
-        logger = self.logger()
-        logger.info("CPPython: Entered 'on_post_install'")
+        project_configuration = ProjectConfiguration(
+            pyproject_file=pyproject_file, verbosity=verbosity, version=version
+        )
 
-        if (pdm_pyproject := project.pyproject) is None:
-            logger.info("CPPython: Project data was not available")
+        self.logger.info("CPPython: Entered 'on_post_install'")
+
+        if (pdm_pyproject := project.pyproject.read()) is None:
+            self.logger.info("CPPython: Project data was not available")
             return
 
         cppython_project = CPPythonProject(project_configuration, self, pdm_pyproject)
