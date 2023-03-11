@@ -3,23 +3,13 @@
 
 import pytest
 from pdm.core import Core
-from pytest_cppython.plugin import InterfaceIntegrationTests
 from pytest_mock import MockerFixture
 
 from cppython_pdm.plugin import CPPythonPlugin
 
 
-class TestCPPythonInterface(InterfaceIntegrationTests[CPPythonPlugin]):
+class TestCPPythonInterface:
     """The tests for the PDM interface"""
-
-    @pytest.fixture(name="plugin_type")
-    def fixture_plugin_type(self) -> type[CPPythonPlugin]:
-        """A required testing hook that allows type generation
-
-        Returns:
-            The plugin type
-        """
-        return CPPythonPlugin
 
     @pytest.fixture(name="interface")
     def fixture_interface(self, plugin_type: type[CPPythonPlugin]) -> CPPythonPlugin:
