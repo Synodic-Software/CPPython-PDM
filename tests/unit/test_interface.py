@@ -3,7 +3,7 @@
 
 import pytest
 from pdm.core import Core
-from pytest_mock import MockerFixture
+from pdm.project.core import Project
 
 from cppython_pdm.plugin import CPPythonPlugin
 
@@ -23,16 +23,11 @@ class TestCPPythonInterface:
         """
         return plugin_type(Core())
 
-    def test_entrypoint(self, mocker: MockerFixture) -> None:
-        """Verify that this project's plugin hook is setup correctly
-
-        Args:
-            mocker: Mocker fixture for plugin patch
-        """
-
-        patch = mocker.patch("cppython_pdm.plugin.CPPythonPlugin")
+    def test_pdm_project(self) -> None:
+        """Verify that this PDM won't return empty data"""
 
         core = Core()
         core.load_plugins()
+        pdm_project = Project(core, root_path=None)
 
-        assert patch.called
+        assert pdm_project
