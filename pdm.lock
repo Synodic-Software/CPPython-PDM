@@ -102,7 +102,7 @@ dependencies = [
 
 [[package]]
 name = "cppython"
-version = "0.7.1.dev26"
+version = "0.7.1.dev27"
 requires_python = ">=3.11"
 summary = "A Python management solution for C++ dependencies"
 dependencies = [
@@ -644,9 +644,9 @@ content_hash = "sha256:0550f53def016d2579f68a034009051fe48568e1695179560fde6b558
     {url = "https://files.pythonhosted.org/packages/f9/06/5f6555205d13f8811558b73fa37596519272fb077ad7f9faa4e4162a23a4/coverage-7.2.1-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:d2ef6cae70168815ed91388948b5f4fcc69681480a0061114db737f957719f03"},
     {url = "https://files.pythonhosted.org/packages/fe/0c/9c463e24ac89408c13084ddaefdb7c2d55ed2da7c556214159b261df4737/coverage-7.2.1-cp39-cp39-win_amd64.whl", hash = "sha256:bd5a12239c0006252244f94863f1c518ac256160cd316ea5c47fb1a11b25889a"},
 ]
-"cppython 0.7.1.dev26" = [
-    {url = "https://files.pythonhosted.org/packages/bd/3c/f2b5fc0e3110fc002e516375c16ed36dbfc44924837683d0d27e7f761809/cppython-0.7.1.dev26-py3-none-any.whl", hash = "sha256:fb3803c2445f8c46a5ce94829569582870f34f1ee15f812800e823ee04f0588f"},
-    {url = "https://files.pythonhosted.org/packages/f5/3f/22505626266969823e0fbe4cb8cb8a9e7ec6155bcf5d7b30de926e4df31e/cppython-0.7.1.dev26.tar.gz", hash = "sha256:49ef9832ed31966d06db42930e6e4d132cddcf12ce1578815d819749f22d8cb5"},
+"cppython 0.7.1.dev27" = [
+    {url = "https://files.pythonhosted.org/packages/4c/93/69f4443aad6bf501857184a8004f3ee9d58e8dfce9f47f363c8c30c24e38/cppython-0.7.1.dev27.tar.gz", hash = "sha256:a43eebd0f560c1ceeff5162cedd26955c8b7fefe3387bcf44256a960bc54cac7"},
+    {url = "https://files.pythonhosted.org/packages/5c/e6/42d9149ec234e8f9a42cc539ba6bb4cf2092a204c177ed84f0c8372705dc/cppython-0.7.1.dev27-py3-none-any.whl", hash = "sha256:47903f25b27c73b5d8a11340ed2745951ae434aae7331451348ce3bb5961ab7c"},
 ]
 "cppython-core 0.6.1.dev53" = [
     {url = "https://files.pythonhosted.org/packages/4f/91/39c4dea7d8931b1ffbc299c9333799a96de5891fa1708dfe3327d2d0bc8c/cppython-core-0.6.1.dev53.tar.gz", hash = "sha256:e1ae355403898e49cba7076e8365387b7a3378d40217d28e015390fac565870f"},
